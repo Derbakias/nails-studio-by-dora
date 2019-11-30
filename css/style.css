@@ -1,5 +1,5 @@
 :root {
-  --primary-color: #E3DCD1;
+  --primary-color: #eeeeee;
   --secondary-color: #DD2163;
   --primary-heading-color: #480B20;
 }
@@ -487,6 +487,7 @@ img {
 /* -------- PRICING ------- */
 .pricing {
   width: 100%;
+  margin-bottom: 3rem;
   text-align: center;
 }
 .pricing .row {
@@ -496,11 +497,36 @@ img {
 }
 
 .pricing .col {
+  position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  width: 30%;
+  justify-content: space-between;
+  width: 28%;
   height: 100%;
-  background: var(--primary-color);
+  background: #eee;
+}
+
+.pricing .col:nth-child(2) {
+  position: relative;
+  top: -40px;
+  left: -30px
+}
+
+.pricing .price {
+  font-size: 3rem;
+  font-weight: 200;
+}
+
+.pricing .service {
+  font-weight: 200;
+}
+
+.pricing .pink-box {
+  position: absolute;
+  top: 40px;
+  left: 30px;
+  width: 100%;
+  height: 100%;
+  background: var(--secondary-color);
+  z-index: -1;
 }
