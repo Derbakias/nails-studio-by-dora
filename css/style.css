@@ -132,10 +132,21 @@ img {
   z-index: 10;
 }
 
-#navbar .container {
+.navbar-wrapper {
+  position: relative;
+  left: -100vw;
   display: flex;
   justify-content: space-between;
   width: 100%;
+  animation: navbar 0.6s linear 1  0s normal forwards;
+}
+
+/* Navbar Animation keyframe */
+@keyframes navbar {
+  25% {left: -90vw}
+  50% {left: -60vw;}
+  75% {left: -30vw;}
+  100% {left: 0;}
 }
 
 #navbar .logo {
@@ -202,9 +213,17 @@ img {
   align-items: flex-start;
   color: var(--primary-color);
   text-shadow: #000000 4px 5px 5px;
+  opacity: 0;
+  animation: header 1.8s linear 0.8s 1 normal forwards;
+}
+
+/* Main-header Keyframe */
+@keyframes header {
+  to {opacity: 1;}
 }
 
 #main-header .text-content .btn {
+  font-weight: 100;
   text-shadow: none;
 }
 
@@ -331,6 +350,29 @@ img {
 .details .text p {
   text-align: left;
   line-height: 1.5;
+}
+
+.details .row:first-child .text {
+  position: relative;
+  left: -100vw;
+  animation: history-text 1s ease-in-out 1 0.6s normal forwards;
+}
+
+.details .row:first-child .media {
+  position: relative;
+  top: -105vh;
+  animation: image 1s ease-out 1 0.6s normal forwards;
+}
+
+/* About keyframes */
+/* text */
+@keyframes history-text {
+  to {left: 0;}
+}
+
+/* media */
+@keyframes image {
+  to {top: 0;}
 }
 
 .details .row:last-child .text {
@@ -533,11 +575,23 @@ img {
 
 /* Contact page */
 .contact .header h2 {
+  position: relative;
+  left: -100vw;
   color: silver;
   font-family: 'Times New Roman', Times, serif;
   font-size: 2.5rem;
   font-weight: 100;
   text-align: center;
+  transform: scale(0);
+  animation: contact-header 1.2s ease-in-out 0s 1 normal forwards;
+}
+
+/* contact keyframe */
+@keyframes contact-header{
+  to {
+    left: 0;
+    transform: scale(1);
+  }
 }
 
 .contact .row {
